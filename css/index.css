@@ -1,0 +1,16 @@
+nav{
+    background-color:hsl(216, 98%, 52%);
+}
+.btn-down{
+    margin-bottom: 30px;
+}
+
+.container{
+    /* margin:200px 550px; */
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding-top: min(100px,50vh);
+
+}

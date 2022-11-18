@@ -1,5 +1,5 @@
 <?php
-  echo "hello from php";
+//   echo "hello from php";
   $user = $_POST['user'];
   $pass = $_POST['pass'];
 //connecting to db
@@ -8,20 +8,20 @@
   $num = mysqli_num_rows($query);
 
   if(!$user & !$pass){
-    echo "All fields need";
+    echo"<p style='background-color:red; color:white;'>All fields are required</p>";
 }
 else
     if(!$user){
-        echo "Username required";
+        echo"<p style='background-color:red; color:white;'>Username Required</p>";
     }
     else 
         if(!$pass){
-            echo "password required";
+            echo "<p style='background-color:red; color:white;'>Password required</p>";
         }
     else
         if($num == 0)
         {
-            echo "Incorrent credentials";
+            echo "<p style='background-color:red; color:white;'>Incorrect credentials</p>";
         }
         else
         {

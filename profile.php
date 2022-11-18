@@ -51,7 +51,7 @@
                 <!-- username  -->
                 <h4 id="user" class="mb-2">Welcome Home,<br><strong><?php echo $user;?></strong></h4>
                 <p class="text-muted mb-4">Joined on: <?php echo $date ?><p class="text-muted mb-4"> <?php echo $email ?> <span class="mx-2">|</span> 
-                <a href="#!">Logout</a></p>
+                <a href="login.html">Logout</a></p>
 
                 <!-- password -->
                 <label for="">Password</label>
@@ -71,9 +71,12 @@
 
 
                 <!-- primary key to update values in sql -->
-                <div id="primary_key"><?php echo $id; ?></div>
+                <div id="primary_key"> <?php echo $id; ?></div>
 
                 <div id="edit_error"></div>
+
+                <!--  -->
+                <p>Please do no leave any fields empty*</p>
 
                   <!-- submut button -->
               <button id="edit_btn" type="button" class="btn btn-primary btn-rounded btn-sm">Update all</button>

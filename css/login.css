@@ -2,7 +2,7 @@
     max-width:500px;
     margin:100px auto;
     padding: 30px; 
-    border:2px solid rgb(228, 228, 228);
+    border:2px solid hsl(216, 98%, 52%);
     border-radius: 10px;
 }
 input{
@@ -20,4 +20,3 @@ h1{
 .btn{
     width: 100%;
 }
-

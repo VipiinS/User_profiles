@@ -15,7 +15,7 @@
 $query = mysqli_query($con,"SELECT `id` FROM `users` WHERE `username` = '$user'" );
 $num = mysqli_num_rows($query);
 if(!$user & !$pass){
-    echo "please enter all fields";
+    echo "<p style='background-color:red;'>All fields are empty</p>";
 }
 else
     if(!$user){
@@ -36,7 +36,7 @@ else
 
                 mysqli_query($con,"INSERT INTO `users` (`username`, `password`,`email`,`gender`,`age`,`contact`) VALUES ('$user', '$pass','$email','$gender','$age','$contact');");
                 $id = mysqli_insert_id($con);
-                    echo "<p style='background-color:green;'>Thanks for registering$user,<br> your id is $id<p>";
+                    echo "<p style='background-color:green;'>Registered<br> your id is $id<p>";
             }
 
 ?>

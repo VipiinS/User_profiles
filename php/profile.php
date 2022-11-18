@@ -18,6 +18,6 @@
     WHERE id = '$id';");
 
 
-    echo "Successfully Updated";
+    echo "<p style='background-color:green; color:white;'>Successfully Updated</p>";
 
 ?>

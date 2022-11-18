@@ -12,7 +12,7 @@ $(document).ready(function(){
         var data = "user=" + user + "&pass=" + pass + "&id=" + id + "&gender=" + gender + "&age=" + age + "&contact=" + contact;
             $.ajax({
                 method: "post",
-                url: "php/profile2.php?",
+                url: "php/profile.php?",
                 data : data,
                 success: function(data){
                     $("#edit_error").html(data); 
