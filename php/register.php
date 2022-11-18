@@ -32,11 +32,14 @@ else
                 echo "<p style='background-color:red;'>Enter a password</p>";
             }
             else{
-                // $encrypted = sha1(md5($pass));
+                // $encrypted = sha1(md5($pass)); // did not hash passwords..
 
-                mysqli_query($con,"INSERT INTO `users` (`username`, `password`,`email`,`gender`,`age`,`contact`) VALUES ('$user', '$pass','$email','$gender','$age','$contact');");
+                $stmt = $con->prepare("INSERT INTO users (username,password,email,gender,age,contact) VALUES (?,?,?,?,?,?)");
+                $stmt->bind_param("ssssii", $user,$pass,$email,$gender,$age,$contact);
                 $id = mysqli_insert_id($con);
-                    echo "<p style='background-color:green;'>Registered<br> your id is $id<p>";
+                $stmt->execute();
+
+                echo "<p style='background-color:green;'>Registered<br><p>";
             }
 
 ?>

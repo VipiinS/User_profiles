@@ -4,6 +4,8 @@
   $pass = $_POST['pass'];
 //connecting to db
   $con = mysqli_connect("localhost","root","","guvi");
+
+  //Did not use prepared SQL statement for this... 
   $query = mysqli_query($con,"SELECT `id` FROM `users` WHERE `username`='$user' AND `password`= '$pass'");
   $num = mysqli_num_rows($query);
 

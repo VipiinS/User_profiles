@@ -10,12 +10,16 @@
     // echo $user; 
     $con = mysqli_connect("localhost","root","","guvi");
 
-    $query = mysqli_query($con,"UPDATE `users` 
-    SET `password`='$pass',
-        `gender` = '$gender',
-        `age` = '$age',
-        `contact` = '$contact'
-    WHERE id = '$id';");
+    $stmt = $con->prepare("UPDATE users 
+                        SET password = ?,
+                                gender = ?,
+                                age = ?,
+                                contact = ?
+                        WHERE id = '$id';");
+    
+    $stmt->bind_param("ssii",$pass,$gender,$age,$contact);
+    $id = mysqli_insert_id($con);
+    $stmt->execute();
 
 
     echo "<p style='background-color:green; color:white;'>Successfully Updated</p>";
