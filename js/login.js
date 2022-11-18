@@ -5,6 +5,7 @@ $(document).ready(function(){
         $('#login_btn').click(function(){
             
             // if login session is not in localStorage
+            //we get input from the user
             var user = $("#username").val();
             var pass = $("#password").val();
     
@@ -24,6 +25,7 @@ $(document).ready(function(){
     }
     else{
         //if the login session is available in localStorage,use it to login automatically
+        //by assigning it to the user and pass variables
         var user = localStorage.getItem('localUser');
         var pass = localStorage.getItem('localPwd');
         console.log(user);
