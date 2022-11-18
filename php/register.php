@@ -40,6 +40,8 @@ else
                 $stmt->execute();
 
                 echo "<p style='background-color:green;'>Registered<br><p>";
+                echo "<script> window.location.href='login.html'; </script>";
+
             }
 
 ?>
