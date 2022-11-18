@@ -8,6 +8,14 @@ $(document).ready(function(){
         var age = $("#age").val();
         var contact = $("#contact").val();  
 
+        //when edited,changing th elocal storage username and password also
+        localStorage.removeItem('localUser');
+        localStorage.removeItem('localPwd');
+
+        localStorage.setItem('localUser',user);
+        localStorage.setItem('localPwd',pass);
+
+
         var data = "user=" + user + "&pass=" + pass + "&id=" + id + "&gender=" + gender + "&age=" + age + "&contact=" + contact;
             $.ajax({
                 method: "post",
@@ -18,4 +26,16 @@ $(document).ready(function(){
                 }
             })
     });
+
+
+
+    $("#logout_btn").click(function(){
+        // alert("out");
+
+        //removing login session information
+        localStorage.removeItem('localUser');
+        localStorage.removeItem('localPwd');
+
+        window.location.replace("index.html")
+    })
 });

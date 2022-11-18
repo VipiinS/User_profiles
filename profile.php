@@ -47,13 +47,16 @@
                 </div>
 
                 <!-- username  -->
-                <h4 id="user" class="mb-2">Welcome Home,<br><strong><?php echo $user;?></strong></h4>
+                <h4 id="user" class="mb-2"><br><strong><?php echo $user;?></strong></h4>
                 <p class="text-muted mb-4">Joined on: <?php echo $date ?><p class="text-muted mb-4"> <?php echo $email ?> <span class="mx-2">|</span> 
-                <a href="login.html">Logout</a></p>
+                <button id="logout_btn" type="button" class="btn btn-primary btn-rounded btn-sm">logout</button>
 
                 <!-- password -->
+                <p>
                 <label for="">Password</label>
                 <p><input id="password" type="text" placeholder="********"></p>
+                </p>
+                
 
                 <!-- gender -->
                 <label for="">Gender</label>
