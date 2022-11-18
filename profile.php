@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="assets/jquery.js"></script>
     <script src="js/profile.js"></script>
+    <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
         <?php
@@ -42,21 +43,36 @@
           <div class="card" style="border-radius: 15px;">
             <div class="card-body text-center">
 
-              <!-- image  -->
-              <div class="mt-3 mb-4">
+                <!-- image  -->
+                <div class="mt-3 mb-4">
                 <img src="assets/picture.png" class="rounded-circle img-fluid" style="width: 100px;" />
-              </div>
+                </div>
 
-              <!-- username  -->
-              <h4 class="mb-2"><?php echo $user;?></h4>
-              <p class="text-muted mb-4">Joined on: <?php echo $date ?><p class="text-muted mb-4"> <?php echo $email ?> <span class="mx-2">|</span> 
+                <!-- username  -->
+                <h4 id="user" class="mb-2">Welcome Home,<br><strong><?php echo $user;?></strong></h4>
+                <p class="text-muted mb-4">Joined on: <?php echo $date ?><p class="text-muted mb-4"> <?php echo $email ?> <span class="mx-2">|</span> 
                 <a href="#!">Logout</a></p>
-                <p><input id="username" type="text"></p>
+
+                <!-- password -->
+                <label for="">Password</label>
                 <p><input id="password" type="text" placeholder="********"></p>
+
+                <!-- gender -->
+                <label for="">Gender</label>
                 <p><input id="gender" type="text" placeholder="<?php echo $gender; ?>"></p>
+
+                <!-- age -->
+                <label for="">Age</label>
                 <p><input id="age" type="text" placeholder="<?php echo $age;?>"></p>
+
+                <!-- contact -->
+                <label for="">Contact</label>
                 <p><input id="contact" type="text" placeholder="<?php echo $contact?>"></p>
-                
+
+
+                <!-- primary key to update values in sql -->
+                <div id="primary_key"><?php echo $id; ?></div>
+
                 <div id="edit_error"></div>
 
                   <!-- submut button -->
