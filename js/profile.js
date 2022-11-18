@@ -1,7 +1,6 @@
 $(document).ready(function(){
     $("#edit_btn").click(function(){
         // alert("editing" );
-        // var user = $("#username").val();
         var user = $("#user").text();
         var pass = $("#password").val();
         var id = $("#primary_key").text();

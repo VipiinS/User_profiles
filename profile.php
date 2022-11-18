@@ -16,8 +16,6 @@
             $id = $_SESSION['id'];
 
             $con = mysqli_connect("localhost","root","","guvi");
-
-            // $query = mysqli_query($con,"SELECT `username` FROM `users` WHERE `id`='$id'");
         
             $query = mysqli_query($con,"SELECT * FROM `users` WHERE `id`='$id'");
             $fetch = mysqli_fetch_assoc($query);
