@@ -8,6 +8,14 @@ $(document).ready(function(){
         var age = $("#age").val();
         var contact = $("#contact").val();  
 
+        //when edited,changing the old local storage username, password and set it to new username and password
+        localStorage.removeItem('localUser');
+        localStorage.removeItem('localPwd');
+
+        localStorage.setItem('localUser',user);
+        localStorage.setItem('localPwd',pass);
+
+        //sending the data to php to insert into the db
         var data = "user=" + user + "&pass=" + pass + "&id=" + id + "&gender=" + gender + "&age=" + age + "&contact=" + contact;
             $.ajax({
                 method: "post",
@@ -18,4 +26,16 @@ $(document).ready(function(){
                 }
             })
     });
+
+
+    //when logout button is pressed,we clear the local storage
+    $("#logout_btn").click(function(){
+
+        //removing login session information
+        localStorage.removeItem('localUser');
+        localStorage.removeItem('localPwd');
+
+        //moving the window to index page
+        window.location.replace("index.html")
+    })
 });
